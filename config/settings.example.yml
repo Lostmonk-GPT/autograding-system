@@ -1,0 +1,26 @@
+application:
+  name: "AutoGrading System"
+  version: "1.0.0"
+  debug: true
+  offline_mode: true
+
+ocr:
+  engines:
+    tesseract:
+      enabled: true
+    easyocr:
+      enabled: true
+  confidence_threshold: 0.7
+
+grading:
+  mock_mode: true
+  subjects:
+    - algebra1
+    - ap_calculus
+    - geometry
+
+integrations:
+  canvas:
+    mock_mode: true
+  google_drive:
+    mock_mode: true
