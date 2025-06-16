@@ -1,0 +1,498 @@
+# AutoGrading System - Comprehensive .gitignore
+
+# ============================================================================
+# Python
+# ============================================================================
+
+# Byte-compiled / optimized / DLL files
+__pycache__/
+*.py[cod]
+*$py.class
+
+# C extensions
+*.so
+
+# Distribution / packaging
+.Python
+build/
+develop-eggs/
+dist/
+downloads/
+eggs/
+.eggs/
+lib/
+lib64/
+parts/
+sdist/
+var/
+wheels/
+share/python-wheels/
+*.egg-info/
+.installed.cfg
+*.egg
+MANIFEST
+
+# PyInstaller
+*.manifest
+*.spec
+
+# Installer logs
+pip-log.txt
+pip-delete-this-directory.txt
+
+# Unit test / coverage reports
+htmlcov/
+.tox/
+.nox/
+.coverage
+.coverage.*
+.cache
+nosetests.xml
+coverage.xml
+*.cover
+*.py,cover
+.hypothesis/
+.pytest_cache/
+cover/
+
+# Translations
+*.mo
+*.pot
+
+# Django stuff:
+*.log
+local_settings.py
+db.sqlite3
+db.sqlite3-journal
+
+# Flask stuff:
+instance/
+.webassets-cache
+
+# Scrapy stuff:
+.scrapy
+
+# Sphinx documentation
+docs/_build/
+
+# PyBuilder
+.pybuilder/
+target/
+
+# Jupyter Notebook
+.ipynb_checkpoints
+
+# IPython
+profile_default/
+ipython_config.py
+
+# pyenv
+.python-version
+
+# pipenv
+Pipfile.lock
+
+# poetry
+poetry.lock
+
+# pdm
+.pdm.toml
+
+# PEP 582
+__pypackages__/
+
+# Celery stuff
+celerybeat-schedule
+celerybeat.pid
+
+# SageMath parsed files
+*.sage.py
+
+# Environments
+.env
+.venv
+env/
+venv/
+ENV/
+env.bak/
+venv.bak/
+
+# Spyder project settings
+.spyderproject
+.spyproject
+
+# Rope project settings
+.ropeproject
+
+# mkdocs documentation
+/site
+
+# mypy
+.mypy_cache/
+.dmypy.json
+dmypy.json
+
+# Pyre type checker
+.pyre/
+
+# pytype static type analyzer
+.pytype/
+
+# Cython debug symbols
+cython_debug/
+
+
+# ============================================================================
+# AutoGrading System Specific
+# ============================================================================
+
+# Sensitive Configuration Files
+.env
+.env.local
+.env.production
+.env.staging
+config/settings.local.yaml
+config/settings.production.yaml
+
+# API Keys and Secrets
+**/api_keys.json
+**/credentials.json
+**/client_secret*.json
+**/.credentials/
+**/service_account.json
+
+# Student Data and Assignments (FERPA Compliance)
+data/input/real_assignments/
+data/input/student_work/
+data/input/actual_scans/
+data/output/graded_assignments/
+data/output/student_results/
+**/student_data/
+**/real_assignments/
+**/graded_work/
+
+# Test Data (keep sample data, exclude real data)
+data/input/real/
+data/input/production/
+data/input/*_real_*
+data/input/*_student_*
+data/input/*_actual_*
+
+# Temporary Processing Files
+data/temp/
+data/tmp/
+temp_files/
+temporary/
+**/temp_*
+**/tmp_*
+
+# OCR Engine Cache and Models
+**/easyocr_models/
+**/pix2text_models/
+**/tesseract_cache/
+**/model_cache/
+.easyocr/
+.pix2text/
+
+# Generated Output Files
+output/
+results/
+generated/
+processed/
+**/output_*
+**/processed_*
+**/results_*
+
+# Log Files
+logs/
+*.log
+log/
+**/debug.log
+**/error.log
+**/ocr.log
+**/processing.log
+
+# Backup Files
+backup/
+backups/
+**/backup_*
+**/bak_*
+*.bak
+*.backup
+
+# Database Files
+*.db
+*.sqlite
+*.sqlite3
+assignment_database/
+
+# PDF Generation Temporary Files
+**/pdf_temp/
+**/temp_pdfs/
+
+
+# ============================================================================
+# Development Tools
+# ============================================================================
+
+# IDE and Editor Files
+.vscode/
+.idea/
+*.swp
+*.swo
+*~
+
+# JetBrains IDEs
+.idea/
+*.iml
+*.ipr
+*.iws
+
+# Sublime Text
+*.sublime-project
+*.sublime-workspace
+
+# Vim
+*.swp
+*.swo
+Session.vim
+.netrwhist
+
+# Emacs
+*~
+\#*\#
+/.emacs.desktop
+/.emacs.desktop.lock
+*.elc
+auto-save-list
+tramp
+.\#*
+
+# Visual Studio Code
+.vscode/
+!.vscode/settings.json
+!.vscode/tasks.json
+!.vscode/launch.json
+!.vscode/extensions.json
+*.code-workspace
+
+
+# ============================================================================
+# Operating System
+# ============================================================================
+
+# macOS
+.DS_Store
+.AppleDouble
+.LSOverride
+Icon
+._*
+.DocumentRevisions-V100
+.fseventsd
+.Spotlight-V100
+.TemporaryItems
+.Trashes
+.VolumeIcon.icns
+.com.apple.timemachine.donotpresent
+.AppleDB
+.AppleDesktop
+Network Trash Folder
+Temporary Items
+.apdisk
+
+# Windows
+Thumbs.db
+Thumbs.db:encryptable
+ehthumbs.db
+ehthumbs_vista.db
+*.tmp
+*.temp
+*.lnk
+Desktop.ini
+$RECYCLE.BIN/
+*.cab
+*.msi
+*.msix
+*.msm
+*.msp
+*.exe
+
+# Linux
+*~
+.fuse_hidden*
+.directory
+.Trash-*
+.nfs*
+
+
+# ============================================================================
+# Image and Media Files (except samples)
+# ============================================================================
+
+# Processed Images (exclude from repo to save space)
+**/processed_images/
+**/enhanced_images/
+**/ocr_processed/
+
+# Large Image Files (>5MB typically)
+*.tiff
+*.tif
+
+# Keep sample images but exclude large batches
+data/input/batch_*/
+data/input/large_*/
+
+# Video Files (if any are generated)
+*.mp4
+*.avi
+*.mov
+*.wmv
+
+
+# ============================================================================
+# Documentation Build Files
+# ============================================================================
+
+# Sphinx documentation
+docs/_build/
+docs/build/
+
+# MkDocs
+site/
+
+# Jekyll
+_site/
+.sass-cache/
+.jekyll-cache/
+.jekyll-metadata
+
+
+# ============================================================================
+# Docker
+# ============================================================================
+
+# Docker files (if using containers later)
+Dockerfile.local
+docker-compose.override.yml
+.dockerignore
+
+
+# ============================================================================
+# Testing and Performance
+# ============================================================================
+
+# Performance test results
+performance_results/
+benchmark_results/
+speed_tests/
+
+# Large test datasets
+test_data/large/
+test_data/performance/
+**/large_test_*
+
+# Memory dumps
+*.hprof
+*.prof
+
+
+# ============================================================================
+# Package Managers and Dependencies
+# ============================================================================
+
+# Node.js (if frontend is added later)
+node_modules/
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+
+# Conda
+.conda/
+
+
+# ============================================================================
+# Cloud and Deployment
+# ============================================================================
+
+# Terraform
+*.tfstate
+*.tfstate.*
+.terraform/
+
+# AWS
+.aws/
+
+# Google Cloud
+.gcloud/
+
+# Heroku
+.heroku/
+
+
+# ============================================================================
+# Specific File Exclusions
+# ============================================================================
+
+# Personal notes and TODO files
+TODO.personal
+NOTES.personal
+*.personal
+personal_*
+
+# Local configuration overrides
+local_*
+*_local.*
+
+# Backup versions of critical files
+settings.yaml.bak
+config.py.bak
+main.py.bak
+
+# Archive files
+*.zip
+*.tar.gz
+*.tar.bz2
+*.tar.xz
+*.7z
+*.rar
+
+# ============================================================================
+# Keep These Files (Force Include)
+# ============================================================================
+
+# Force include important config templates
+!config/settings.example.yaml
+!.env.example
+!requirements.txt
+!requirements-dev.txt
+
+# Force include sample data
+!data/test_data/sample_*
+!data/templates/
+!data/samples/
+
+# Force include documentation
+!docs/
+!README.md
+!CHANGELOG.md
+!CONTRIBUTING.md
+
+# Force include GitHub workflows
+!.github/
+
+# ============================================================================
+# Comments for Future Reference
+# ============================================================================
+
+# This .gitignore is designed for the AutoGrading System with:
+# - FERPA compliance (no student data)
+# - OCR model cache exclusions
+# - Development environment isolation
+# - Security (no API keys or credentials)
+# - Performance (no large binary files)
+#
+# Remember to:
+# 1. Never commit real student assignments
+# 2. Keep API keys in .env files (excluded)
+# 3. Use data/samples/ for sample assignments only
+# 4. Store large models in external storage or cache
