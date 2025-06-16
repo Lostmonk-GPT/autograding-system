@@ -1,0 +1,97 @@
+# AutoGrading System Configuration (Updated for Week 4-5 OCR)
+
+application:
+  name: "AutoGrading System"
+  version: "1.0.0"
+  debug: true
+  offline_mode: true
+
+# OCR Configuration (Week 4-5)
+ocr:
+  engines:
+    tesseract:
+      enabled: true
+      priority: 1
+      math_config: "--psm 6 -c tessedit_char_whitelist=0123456789+-*/=().,ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz"
+      general_config: "--psm 6"
+      confidence_threshold: 30
+      timeout: 30
+    
+    easyocr:
+      enabled: true
+      priority: 2
+      languages: ['en']
+      confidence_threshold: 0.3
+      timeout: 45
+    
+    trocr:
+      enabled: false  # Heavy model, enable when needed
+      priority: 3
+      model: "microsoft/trocr-base-printed"
+      timeout: 60
+    
+    pix2text:
+      enabled: true
+      priority: 1  # Best for mathematical formulas
+      timeout: 45
+  
+  processing:
+    parallel_execution: true
+    max_workers: 3
+    confidence_threshold: 0.7
+    aggregation_method: "weighted_vote"
+    symbol_correction: true
+  
+  quality_thresholds:
+    min_confidence: 0.5
+    min_character_count: 10
+    max_processing_time: 120
+
+# Mathematical Symbol Correction
+math_correction:
+  character_substitutions: true
+  operator_spacing: true
+  parentheses_balancing: true
+  fraction_formatting: true
+  exponent_notation: true
+  sympy_validation: true
+  preserve_original_on_failure: true
+
+# Image Processing (Week 3)
+image:
+  max_file_size_mb: 50
+  supported_formats: ['.jpg', '.jpeg', '.png', '.pdf']
+  preprocessing:
+    denoise: true
+    deskew: true
+    enhance_contrast: true
+    resize_max_width: 2000
+
+# QR Code System (Week 2)  
+qr:
+  detection_methods: ['pyzbar', 'opencv']
+  search_regions:
+    top_right: {x: 0.6, y: 0.0, w: 0.4, h: 0.3}
+    top_left: {x: 0.0, y: 0.0, w: 0.4, h: 0.3}
+    full_image: {x: 0.0, y: 0.0, w: 1.0, h: 1.0}
+
+# AI Grading (Mock mode for Week 6)
+grading:
+  mock_mode: true
+  model: "mock-gpt-4"
+  subjects:
+    - algebra1
+    - ap_calculus
+    - geometry
+
+# Performance
+performance:
+  max_concurrent_assignments: 5
+  processing_timeout_minutes: 10
+  batch_size: 10
+
+# Development/Testing
+development:
+  sample_data_enabled: true
+  mock_responses_enabled: true
+  verbose_logging: true

@@ -1,0 +1,80 @@
+# Assignment Templates for AutoGrading System
+
+templates:
+  algebra1_basic:
+    name: "Algebra 1 - Basic Practice"
+    subject: "algebra1"
+    total_points: 100
+    estimated_time_minutes: 45
+    difficulty_level: "beginner"
+    instructions: |
+      Solve all problems showing your work clearly.
+      Box your final answers.
+      Partial credit is available for correct work.
+    
+    problem_types:
+      - type: "linear_equations"
+        count: 5
+        points_each: 10
+        description: "Solve for x"
+      - type: "word_problems"
+        count: 3
+        points_each: 10
+        description: "Application problems"
+    
+    grading_rubric:
+      work_shown: 40
+      correct_answer: 50
+      presentation: 10
+
+  ap_calculus_derivatives:
+    name: "AP Calculus - Derivatives"
+    subject: "ap_calculus"
+    total_points: 150
+    estimated_time_minutes: 75
+    difficulty_level: "advanced"
+    instructions: |
+      Show all work for full credit.
+      Use proper calculus notation.
+    
+    problem_types:
+      - type: "basic_derivatives"
+        count: 6
+        points_each: 8
+        description: "Find derivatives using basic rules"
+      - type: "chain_rule"
+        count: 4
+        points_each: 12
+        description: "Apply chain rule"
+    
+    grading_rubric:
+      derivative_rules: 30
+      algebraic_work: 25
+      setup_reasoning: 25
+      final_answer: 20
+
+  geometry_basic:
+    name: "Geometry - Fundamentals"
+    subject: "geometry"
+    total_points: 100
+    estimated_time_minutes: 50
+    difficulty_level: "beginner"
+    instructions: |
+      Draw clear diagrams where helpful.
+      Show all calculations.
+    
+    problem_types:
+      - type: "angle_relationships"
+        count: 4
+        points_each: 12
+        description: "Find missing angles"
+      - type: "area_perimeter"
+        count: 3
+        points_each: 13
+        description: "Calculate area and perimeter"
+    
+    grading_rubric:
+      geometric_reasoning: 40
+      calculations: 35
+      diagrams: 15
+      presentation: 10
